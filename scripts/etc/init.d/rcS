@@ -238,7 +238,7 @@ if [ "$date_set" = "false" ] ; then
     timeservers="$timeservers nist1-ny2.ustiming.org wwv.nist.gov"
     for ts in $timeservers
     do
-        rdate $ts &>/dev/null
+        rdate -n $ts &>/dev/null
         if [ $? -eq 0 ]; then
             echo -n "Time set using timeserver '$ts' to... "
             date
